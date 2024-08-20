@@ -1,17 +1,17 @@
 
 import { MdEditNote } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { useContext, useState } from 'react';
+import { useContext} from 'react';
 import EventContext from "../context/ContextProvider";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import NopostPopup from "./NopostPopup";
+// import NopostPopup from "./NopostPopup";
 
 
 const ShowAllEvents = () => {
     const {state , dispatch} = useContext(EventContext)
     const navigate = useNavigate()
-    const [noEvent , setError] = useState<boolean>(false)
+    // const [noEvent , setError] = useState<boolean>(false)
 //handle delete 
 const handleDelete = (ID:string)=>{
    dispatch({type:"DELETEEVENT" , payload:ID})

@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path:"addevent/:date",
-    element:<Add date=' '/>
+    element:<Add/>
   },
   {
     path: "/showall", 

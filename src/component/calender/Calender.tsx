@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState , useContext } from 'react'
+import { useState , useContext } from 'react'
 import { MdEvent } from "react-icons/md";
 import "./calender.css"
 import Popup from './Popup'
@@ -12,8 +12,7 @@ const Callender = () => {
   const daysInMonth = 30;
   const d = new Date();
   //state variaables 
-const [today , setDate] = useState(d.getDate())
-const [clikedDate , setCliked ] = useState<number>()
+const [today ] = useState(d.getDate())
 //const popupActive = useRef<number>()
 const [popup, setPopup] = useState<number>()
 
@@ -31,7 +30,7 @@ if(popup== date) return
 }
 
 
-const {state , dispatch} = useContext(EventContext)
+const {state } = useContext(EventContext)
 //filter the dates 
 const scheduledDate = state.events.map((item)=>(
  Number( item.date)

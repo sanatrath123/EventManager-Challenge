@@ -18,14 +18,14 @@ const Add = () => {
 const {date} = useParams() 
 
 //get the context store
-const {state , dispatch} = useContext(EventContext)
+const { dispatch} = useContext(EventContext)
 
 
 
     //create a default object if user dont change anything
-const defalutObj = {
+const defalutObj:eventType = {
     id:uid(),
-    date:date,
+    date:date?.toString(),
     time:`${deftime}:00`,
     event:""
 }
@@ -36,7 +36,7 @@ const [Data , setData] = useState<eventType>(defalutObj)
 
 //handle form submit
 const navigate = useNavigate()
-const handleAdd = (e:React.MouseEvent<HTMLElement>):void=>{
+const handleAdd = ():void=>{
   dispatch({type:"ADDEVENT" , payload:Data})
   console.log("Event Added")
   //add a toast msg later

@@ -2,7 +2,7 @@
 //event types
 export interface eventType {
     id:string,
-    date: string,
+    date: string | undefined,
     time: string,
     event: string
 }

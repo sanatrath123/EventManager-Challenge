@@ -3,12 +3,6 @@ import { eventType ,Timetype } from '../../types/contextType'
 import { useParams , useNavigate} from 'react-router-dom';
 import EventContext from '../../context/ContextProvider';
 import { toast } from 'react-hot-toast'
-//create a unique id by a function
-const uid = function(){
-    return Date.now().toString(36) + Math.random().toString(36).substr(2);
-}
-//recent time as default
-const deftime = new Date().getHours() +1
 
 
 const EditEvent = () => {
@@ -35,7 +29,7 @@ const [Data , setData] = useState<eventType>(defalutObj)
 //handle form submit
 const navigate = useNavigate()
 
-const handleAdd = (e:React.MouseEvent<HTMLElement>):void=>{
+const handleAdd = ()=>{
   dispatch({type:"EDITEVENT" , payload:Data})
   console.log("Event Added")
  toast.success("Event successfully Edited")
